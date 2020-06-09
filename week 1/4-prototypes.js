@@ -28,3 +28,27 @@
 // Test your volume and surfaceArea methods by uncommenting the logs below:
 // console.log(cuboid.volume()); // 100
 // console.log(cuboid.surfaceArea()); // 130
+
+
+function CuboidMaker(length, width, height){
+
+  this.length = length;
+  this.width = width;
+  this.height = height;
+}
+
+CuboidMaker.prototype.cVolume = function(){
+	return this.length * this.width * this.height;
+};
+
+CuboidMaker.prototype.sArea = function(){
+	return 2 * ((this.length * this.width )+ (this.length * this.height) + (this.width * this.height));
+};
+
+
+ // const 
+  var cuboid = new CuboidMaker(4,5,5);
+
+
+console.log(cuboid.cVolume()); 
+console.log(cuboid.sArea()); 

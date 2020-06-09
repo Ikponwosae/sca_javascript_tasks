@@ -76,30 +76,99 @@ let inventory = [
   
   // ==== Challenge 1 ====
   // The dealer can't recall the information for a car with an id of 33 on his lot. Help the dealer find out which car has an id of 33 by logging the car's year, make, and model in the console log provided to you below:
-  console.log(`Car 33 is a *car year goes here* *car make goes here* *car model goes here*`);
+  //console.log(`Car 33 is a *car year goes here* *car make goes here* *car model goes here*`);
   
+  var i;
+  var l = inventory.length;
+
+  for(i =0; i < l; i++){
+
+    if(inventory[i].id == 33){
+
+      console.log("Car 33 is a " + inventory[i].car_year + " " + inventory[i].car_make + " " + inventory[i].car_model);
+    }
+  }
+
   // ==== Challenge 2 ====
   // The dealer needs the information on the last car in their inventory.  What is the make and model of the last car in the inventory?  Log the make and model into the console.
-  let lastCar = 0;
-  console.log();
+  
+  var lastCar;
+  var l = inventory.length;
+
+  for(lastCar = 0; i < l; i++){
+
+    if(inventory[lastCar].id == 50){
+      console.log("The Car make and model is " + inventory[lastCar].car_make + "," + inventory[lastCar].car_model);
+    }
+  }
+ console.log("The Car make and model is " + inventory[lastCar].car_make + "," + inventory[lastCar].car_model);
   
   // ==== Challenge 3 ====
   // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
-  let carModels = [];
-  let carModelsSorted = [];
-  console.log();
   
+  var carModels = [];
+  var carModelsSorted = [];
+
+  inventory.map(myFunction);
+
+ function myFunction(object,index,array){
+
+  var mod = object.car_model;
+  carModels.push(mod);
+}
+console.log(carModels);
+
+ carModels.sort();
+ console.log(carModels);
+
   // ==== Challenge 4 ====
   // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
-  let carYears = [];
-  console.log();
   
+  var carYears = [];
+
+ inventory.map(meFunction);
+ 
+ function meFunction(object,index,array){
+  var x = object.car_year;
+  carYears.push(x);
+ }
+  console.log(carYears);
+
   // ==== Challenge 5 ====
   // The car lot manager needs to find out how many cars are older than the year 2000. Using the carYears array you just created, find out how many cars were made before the year 2000 by populating the array oldCars and logging it's length.
-  let oldCars = [];
-  console.log();
   
+ var test;
+ var len = carYears.length;
+ var oldCars =[];
+
+ carYears.map(aFunction);
+
+ function aFunction(index,array){
+
+    for(test = 0; test <= len; test++){
+
+       if(carYears[test] < 2000){
+
+           oldCars.push(carYears[test]);
+       }
+    }
+ }
+ console.log(oldCars.length);
+
   // ==== Challenge 6 ====
   // A buyer is interested in seeing only BMW and Audi cars within the inventory. Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
-  let BMWAndAudi = [];
-  console.log();
+ 
+ var BMWAndAudi = [];
+ var i;
+
+for(i = 0; i < inventory.length; i++){
+
+   var J = inventory[i].car_make;
+
+   if(J == "BMW" || J == "Audi"){
+     BMWAndAudi.push(inventory[i]);
+   }
+ }
+
+ console.log(BMWAndAudi);
+ console.log(JSON.stringify(BMWAndAudi));
