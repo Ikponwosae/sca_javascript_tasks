@@ -1,0 +1,55 @@
+*, *::before, *::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: "Lucida Console", Courier, monospace;
+	background-image: linear-gradient(120deg, #fa8072, #20b2aa);
+}
+
+.calculator-grid{
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	min-height: 100vh;
+	grid-template-rows: minmax(120px, auto) repeat(5, 100px); /*minimum value of the text area and auto to get as long as it needs to 
+	accomodate the values inputed in the text area ALSO to repeat the other rows 5 times each item a 100px wide*/
+	grid-template-columns: repeat(5, 100px);
+}  
+
+.calculator-grid > button{
+	cursor: pointer; /*anytime the mouse hovers over a button, it changes to the pointer mouse*/
+	font-size: 2rem;
+	border: 1px solid rosybrown;
+	outline: none;
+	background-color: rgba(255, 0, 0, 0.4);
+	font-family: "Lucida Console", Courier, monospace;
+}
+
+.calculator-grid > button:hover{
+	background-color: rgba(255, 0, 0, 0.6);
+}
+
+.span-two{
+	grid-column: span 2;
+}
+
+.span-three{
+	grid-column: span 3;
+}
+
+
+.textview{
+	grid-column: 1 / -1;
+	background-color: rgba(0, 0, 0, .55);
+	display: flex;
+	text-align: right;
+	border: 1px rosybrown solid;
+	border-radius: 3px;
+	color: rgba(255, 0, 0, 0.84);
+	font-size: 1.9rem;
+	font-weight: bold;
+	padding:  0px;
+}
