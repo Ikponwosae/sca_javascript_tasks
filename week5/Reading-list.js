@@ -21,6 +21,7 @@ instance methods:
 -
 the two classes are to interact with one another.
 */
+//LAST EDITED ON 04-07-2020
 
 class Book {
 	constructor(titles, genre, author, yesRead, readate) {
